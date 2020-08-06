@@ -25,8 +25,6 @@ if(!empty($_POST["isSubmit-addmore"])){
 
         <?php include_once ('./templates/header.html'); ?>
 
-        <?php include_once './templates/nav.html'; ?>
-
         <section>
             <div class="container-fluid">
                 <div class="row">
@@ -65,6 +63,60 @@ if(!empty($_POST["isSubmit-addmore"])){
                                 <div class="alert alert-success" role="alert"> <p class="text-center"> les données ont été saugardées</p></div>';
                                             
       
+                            }
+
+                            elseif(isset($_GET['id'])){
+                                require("./templates/movies/show.php");
+                            }
+
+                            elseif(isset($_GET['del'])){
+                                $deleteID = $_GET['del'];
+
+                                $sqlImg ="SELECT movies.image FROM `movies` WHERE movies.id = $deleteID";
+                                $sqlImg= $db->query($sqlImg);
+                                $image = $sqlImg-> fetch(PDO::FETCH_ASSOC);
+
+                                $file = 'uploads/'.$image["image"];
+                                @unlink( $file );
+
+                                
+                                $sql = $db->prepare("DELETE FROM `movies` WHERE `movies`.`id` = $deleteID ");
+                                $sql->execute();
+
+
+                                echo '<h2> le film a été supprimé </h2>';
+
+
+                            }
+
+                            elseif(isset($_GET['edit'])){
+
+                                require("./templates/movies/_form_edit.php");
+
+
+                            }
+
+                            elseif(!empty($_post['$movieID'])){
+                               
+                                $updateID = $_GET['edit'];
+
+                                $tableUpdate = [
+                                    'name'=> $_POST['name'], 
+                                    'director'=> $_POST['director'], 
+                                    'id_phase'=> ($_POST['id_phase']),
+                                    'release_date' =>$_POST['release_date'],
+                                    "img" =>$_FILES ['uploadedImg']    
+                                 ];
+
+
+                                $sqlUpdate = $db->prepare("UPDATE `movies` SET `name` = :name, `release_date` = :date, `director` = :director, `id_phase` = :phase, WHERE `movies`.`id` = $updateID ");
+                                $sql->execute(
+                                    [":name" => $tableUpdate["name"], ":release_date" => $tableUpdate["release_date"], ":director" =>$ttableUpdateable["director"], ":id_phase"=>$tableUpdate["id_phase"], ":image"=> $tableUpdate["img"]["name"]]
+                                );
+                                
+                                echo '<h2> le film a été update </h2>';
+
+
                             }
 
                         

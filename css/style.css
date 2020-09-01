@@ -1,0 +1,398 @@
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.flexCenter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flexColumn{
+    flex-direction: column;
+}
+
+.flexStart{
+    align-items: flex-start;
+}
+
+.spaceAround{
+    justify-content: space-around;
+}
+
+.flexWrap{
+    flex-wrap: wrap ;
+}
+
+.button{
+
+    padding: 10px;
+    text-align: center;
+    margin: 10px;
+    display: flex;
+    border: 1px solid hotpink;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    background-color: pink;
+    color: white;
+}
+
+.button:hover{
+    cursor: pointer;
+    color: violet;
+}
+
+h2{
+    font-size: 30px;
+}
+
+.headerText{
+    width: 100%;
+    height: 75px;
+    color: pink;
+}
+
+header{
+    width: 100%;
+}
+
+.header{
+    margin-top: 75px;
+    width: 100%;
+    height: 200px;
+    flex-direction: column;
+    background-image: url("../img/header.jpg");
+    background-repeat: round;
+    font-size: xx-large;
+    color: white;
+
+}
+
+header h1, header p{
+    background-color: pink;
+}
+
+
+.nav {
+    width: 100%;
+    height: 75px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    font-size: medium;
+    font-weight: bolder;
+    background-color: pink;
+    color: white;
+    z-index: 50;
+}
+
+.ul {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    text-decoration: none;
+    list-style-type: none;
+
+}
+
+.ul li {
+    text-decoration: none;
+    display: flex;
+    height: 50px;
+    text-align: center;
+    align-items: center;
+
+}
+.ul a{
+    
+    text-decoration: none;
+    color: white;
+
+}
+
+
+
+.section{
+    width: 100%;
+    height: 260px;
+    color: pink;
+}
+
+.imgLink{
+   width: 300px;
+    height: 400px; 
+    background-color: violet;
+
+}
+.small{
+    width: 75px;
+    height: 100px;
+}
+.imgLink img {
+    width: 100%;
+    height: 100%;
+}
+
+.board{
+    width: 100%;
+    height: auto;
+    color: plum;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+
+.blackboard{
+    position: fixed;
+    z-index: 100;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.438);
+
+    transition: 0.5s;
+
+}
+
+
+.formBoard{
+    width: 95%;
+    height: 95vh;
+    background-color: black;
+    color: pink;
+    font-size: 20px;
+}
+
+.form, .addActorsDatafield, .formDatasInputFields{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+
+}
+
+.form > *{
+    margin: 10px;
+}
+
+.newMovieDatasField, .newActorsDatasfield{
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.newActorformDatasInputFields{
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.radioField,.selectRadioField{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.checkBoxField{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
+    overflow-y: scroll;
+    overscroll-behavior-x: hidden;
+    border: 2px;
+    margin: 10px;
+}
+
+
+
+
+.formDatas{
+    width: 100%;
+
+}
+
+
+
+.formBlock{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;  
+}
+
+.edit{
+    z-index: 200;
+
+}
+
+.delete{
+    z-index: 300;
+    background-color: rgba(255, 0, 0, 0.349);
+    animation-name: alert;
+    animation-duration: 0.2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    visibility: hidden;
+}
+
+@keyframes alert{
+    from {background-color: rgba(255, 0, 0, 0.349);}
+    to {background-color: red;}
+}
+
+
+.display{
+    visibility: visible;
+}
+
+.confirmBox{
+    width: 600px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: hotpink;
+}
+
+.dataBoard{
+    width: 95%;
+    height: 90vh;
+    background-color: black;
+    position: relative;
+    overflow-y: scroll;
+    color: pink;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-around;
+
+}
+
+
+
+.formImage{
+    width: 300px;
+    height: 400px;
+    border: dotted;
+
+}
+
+.translateX-100{
+    transform: translateX(-100%);
+}
+
+#exitLogo{
+    width: 100px;
+    position: absolute;
+    top: 5px;
+    right:50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid;
+    font-weight: bold;
+    text-align: center;
+    padding: 5px;
+}
+.moviesList{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.movieOrActorPoster{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: pink;
+    width: 300px;
+    height: 400px;
+}
+
+.movieOrActorPoster img{
+    width: 100%;
+    height: 100%;
+}
+.movieOrActorDatas{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
+    font-size: 20px;
+
+}
+
+.buttonsBlock{
+    display: flex;
+    align-items: flex-start;
+}
+
+.alignCenter{
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+.alertText{
+    width: 600px;
+    height: 70px;
+    font-size: 25px;
+    background-color: greenyellow;
+    text-align: center;
+    color: blue;
+    margin: 20px;
+
+
+}
+
+.red{
+    background-color: red;
+    animation-name: alert;
+    animation-duration: 0.4s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+
+
+
+
+.formInputFields{
+    width: auto;
+    height: 50px;
+}
+
+.movieDataField{
+    border: 2px solid;
+}
+
+.actorsDataField{
+    border: 2px solid;
+}
+
+.imputField {
+    height: 20px;
+}
+
+
+
+
+
